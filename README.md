@@ -1,8 +1,8 @@
 # LaunchBase-Foodfy
 
 <div align="center">
-   <img src="./public/assets/logoB.png" width="110px" style="margin:40px 6px">
-   <img src="./public/assets/chef.png" width="100px">
+   <img src="assets/logoB.png" width="110px" style="margin:40px 6px">
+   <img src="assets/chef.png" width="100px">
 </div>
 
 # 🚀 Sobre o desafio
