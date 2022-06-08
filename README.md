@@ -11,6 +11,8 @@ Nessa etapa do desafio construi um site completo para uma empresa fictícia de r
 
 ## LaunchBase-Foodfy: Construindo o Foodfy
 
-- Nesta primeira etapa o site foi constuido utilizando apenas HTML e CSS de maneira estática
+- Nesta primeira etapa o site foi constuido utilizando apenas HTML, CSS e Javascript de maneira estática.
+
+- O desafio de por um modal na página de receitas, no qual sua função é de abrir uma caixar com uma melhor visualização dos detalhes da receita
 
 <br>
