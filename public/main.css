@@ -10,14 +10,14 @@
 }
 
 :root {
-    --color-banner:#fbdfdb;
-    --color-border:#ddd;
-    --color-text:#444;
+    --color-banner: #fbdfdb;
+    --color-border: #ddd;
+    --color-text: #444;
     --color-white: #fff;
-    --color-title:#111;
-    --color-subtitle:#777;
-    --color-footer:#eee;
-    --color-text-gray-weak:#999;
+    --color-title: #111;
+    --color-subtitle: #777;
+    --color-footer: #eee;
+    --color-text-gray-weak: #999;
 
 }
 
@@ -48,7 +48,7 @@ header nav {
     justify-content: space-between;
 }
 
-header nav ul {    
+header nav ul {
     display: flex;
     align-items: center;
 }
@@ -150,9 +150,10 @@ article {
     font-size: 18px;
     color: var(--color-text);
     line-height: 28px;
-    text-align: left;    
+    text-align: left;
 }
-section article:last-child{
+
+section article:last-child {
     margin-bottom: 50px;
 }
 
@@ -179,7 +180,7 @@ footer {
 }
 
 /* ==== modal ==== */
-.modal-overlay.active{
+.modal-overlay.active {
     opacity: 1;
     visibility: visible;
 }
@@ -194,7 +195,8 @@ footer {
     opacity: 0;
     visibility: hidden;
 }
-.modal{
+
+.modal {
     background-color: white;
     width: 660px;
     height: 413px;
@@ -228,11 +230,75 @@ footer {
     margin-bottom: 60px;
 }
 
-.modal .close-modal{
+.modal .close-modal {
     font-size: 16px;
     color: var(--color-text-gray-weak);
     cursor: pointer;
 }
 
 /* =================RECIPE-WEB=============== */
-    
+
+.recipe-header img {
+    border-radius: 16px;
+    width: 940px;
+    height: 280px;
+    overflow: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.recipe-header h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 50px 0 4px 0;
+}
+
+.recipe-header h4 {
+    color: var(--color-title);
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin: 4px 0 20px 0;
+}
+
+.recipe-ingredients h3,
+.recipe-prepare h3,
+.recipe-information h3 {
+    font-size: 23px;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.recipe-ingredients li {
+    color: var(--color-subtitle);
+    font-size: 18px;
+    line-height: 28px;
+    margin-left: 18px;
+    list-style: disc;
+}
+
+.recipe-prepare p,
+.recipe-information p {
+    color: var(--color-subtitle);
+    font-size: 18px;
+    text-align: left;
+    line-height: 28px;
+}
+
+.btn {
+    background-color: transparent;
+    font-size: 12px;
+    color: var(--color-text-gray-weak);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.display.hide {
+    display: none;
+}
+
+section:last-child {
+    margin-bottom: 50px;
+}

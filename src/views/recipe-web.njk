@@ -2,41 +2,43 @@
 {% block content %}
     <!--PRINCIPAL-->
     <section class='recipe-header'>
-        <img src="{{ item.image }}" alt="{{ items.title }}"/>
-        <h1>{{ items.title }}</h1>
-        <h4>{{ items.author }}</h4>
+        <img src="{{ item.image }}" alt="{{ item.title }}"/>
+        <h1>{{ item.title }}</h1>
+        <h4>{{ item.author }}</h4>
     </section>
 
-    <section class='recipe-ingredients'>
+    <section class='recipe-ingredients recipe-description'>
         <h3>Ingredientes</h3>
         <button class="btn" type="button">Esconder</button>
         <div class="display">
             <ul>
                 <!-- Através da variavél 'ingrediente' é possivel acessar todos os elementos do Array ingredients, e trazer separado
                 por ',' para cada tag <li> -->
-                {% for ingrediente in items.ingredients %}
+                {% for ingrediente in item.ingredients %}
                     <li>{{ ingrediente }}</li>
                 {% endfor %}
             </ul>
         </div>
     </section>
 
-    <section class='recipe-prepare'>
+    <section class='recipe-prepare recipe-description'>
         <h3>Modo de preparo</h3>
         <button class="btn" type="button">Esconder</button>
         <div class="display">
-            {% for propi in items.preparation %}
+            {% for propi in item.preparation %}
                 <p>{{ propi }}</p>
             {% endfor %}
         </div>
     </section>
 
-    <section class='recipe-information'>
+    <section class='recipe-information recipe-description'>
         <h3>Informações adcionais</h3>
         <button class="btn" type="button">Esconder</button>
         <div class="display">
-            <p>{{ items.information }}</p>
+            <p>{{ item.information }}</p>
         </div>
     </section>
+
+    <script src="btn.js"></script>
 
 {% endblock %}
