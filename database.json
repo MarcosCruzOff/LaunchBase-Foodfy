@@ -1,0 +1,26 @@
+{
+  "chefs": [
+    {
+      "id": 0,
+      "name_chef": "Marcos Cruz Coutinho",
+      "avatar_url": "https://w7.pngwing.com/pngs/903/813/png-transparent-lelouch-lamperouge-c-c-code-geass-lelouch-of-the-rebellion-lost-colors-suzaku-kururugi-anime-black-hair-cartoon-girl.png"
+    }
+  ],
+  "recipes": [
+    {
+      "id": 0,
+      "image": "https://ms314006.github.io/static/b7a8f321b0bbc07ca9b9d22a7a505ed5/97b31/React.jpg",
+      "title_recipe": "React",
+      "author": "Felipe",
+      "ingredients": [
+        "uma colher de sopa",
+        "uma colher de sopa"
+      ],
+      "preparetions": [
+        "alimentar o gato",
+        "Carinho no gato"
+      ],
+      "information": "sim bora"
+    }
+  ]
+}

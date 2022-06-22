@@ -1,0 +1,429 @@
+@charset "UTF-8";
+/* Resetando estilização dos navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Configurando as cores gerais */
+/* Removendo o ScrollBar que provocava um bug de margin */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+  scroll-margin: fixed;
+}
+
+/* Configurando o menu ativo */
+.menu .activeMenu {
+  font-weight: 700;
+}
+
+main {
+  width: 940px;
+  margin: 0 auto;
+}
+
+/* Estilizando todas as paginas detalhes das receitas */
+.recipe-header {
+  display: block;
+}
+
+.recipe-header img {
+  border-radius: 16px;
+  width: 940px;
+  height: 280px;
+  overflow: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.recipe-header h1 {
+  text-align: center;
+  font-size: 32px;
+  margin: 50px 0 4px 0;
+}
+
+.recipe-header h4 {
+  color: #777;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  margin: 4px 0 20px 0;
+}
+
+.recipe-ingredients h3,
+.recipe-prepare h3,
+.recipe-information h3 {
+  font-size: 23px;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.recipe-ingredients li {
+  color: #777;
+  font-size: 18px;
+  line-height: 28px;
+  margin-left: 18px;
+  list-style: disc;
+}
+
+.recipe-prepare p,
+.recipe-information p {
+  color: #777;
+  font-size: 18px;
+  text-align: left;
+  line-height: 28px;
+}
+
+.recipe-information {
+  margin-bottom: 50px;
+}
+
+.btn {
+  background-color: transparent;
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.display.hide {
+  display: none;
+}
+
+button,
+.button {
+  padding: 9px 20px;
+  display: inline-block;
+  color: #fff;
+  height: 37px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.btn-recipe-add {
+  padding: 0;
+  background-color: transparent;
+  color: #6558c3;
+  margin-bottom: 30px;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  color: #999;
+}
+
+input:-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  color: #999;
+}
+
+input::-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  color: #999;
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  color: #999;
+}
+
+.delete {
+  background-color: #dc4747;
+}
+
+.primary {
+  background-color: #6558c3;
+}
+
+/* Estilizando o Footer */
+footer {
+  margin-top: auto;
+  width: 100%;
+  height: 62px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 14px;
+  background-color: #eee;
+  color: #999;
+  position: relative;
+  bottom: 0;
+}
+
+.cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.cards .card {
+  /* margin: 0 auto; */
+  text-align: left;
+}
+
+.cards .card img {
+  width: 300px;
+  height: 140px;
+  border-radius: 15px;
+  background: no-repeat center center / cover;
+}
+
+.cards .card h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #111;
+}
+
+.cards .card p {
+  font-size: 14px;
+  color: #777;
+}
+
+.chefs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.chefs .chef {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chefs .chef img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin-right: 20px;
+}
+
+.chefs .chef .card-description h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #111;
+  opacity: 1.5;
+  margin: 5px 0 10px 0;
+}
+
+.chefs .chef .card-description p {
+  font-size: 14px;
+  color: #777;
+  margin: 5px 0 10px 0;
+}
+
+.chefs .chef .card-description a {
+  font-size: 14px;
+  color: #6558c3;
+  font-weight: bold;
+}
+
+.chefs .chef .title h3 {
+  font-size: 18px;
+  color: #111;
+  font-weight: 500;
+  opacity: 1.5;
+  margin: 9px 0 3px 0;
+}
+
+.chefs .chef .title p {
+  font-size: 14px;
+  color: #777;
+}
+
+.cardAdmin {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.cardAdmin .card {
+  /* margin: 0 auto; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+}
+
+.cardAdmin .card img {
+  width: 172px;
+  height: 80px;
+  border-radius: 15px;
+  background: no-repeat center center / cover;
+  margin-right: 20px;
+}
+
+.cardAdmin .card h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #111;
+}
+
+.cardAdmin .card p {
+  font-size: 14px;
+  color: #777;
+  margin-block: 5px 14px;
+}
+
+.cardAdmin .card a {
+  font-size: 14px;
+  color: #6558c3;
+  font-weight: bold;
+}
+
+header {
+  margin: 38px auto 36px;
+  width: 940px;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav li {
+  margin-right: 30px;
+  height: 37px;
+}
+
+header nav li:nth-child(1) {
+  margin-right: 122px;
+}
+
+header nav li a {
+  color: #111;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Estilizando Banner */
+.banner {
+  background-color: #fbdfdb;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 366px;
+  margin: 0 0 50px 0;
+}
+
+.banner ul {
+  margin: 117px 0 60px 60px;
+  text-align: justify;
+}
+
+.banner h2 {
+  font-size: 32px;
+}
+
+.banner p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #111;
+  opacity: 0.7;
+  width: 316px;
+}
+
+.banner img {
+  width: 216px;
+  height: 300px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-right: 100px;
+}
+
+.accessed h2 {
+  margin-bottom: 20px;
+}
+
+/* Estilizando a Página Sobre */
+article {
+  font-size: 18px;
+  color: #444;
+  line-height: 28px;
+  text-align: justify;
+}
+
+article:last-child {
+  margin-bottom: 50px;
+}
+
+article h2 {
+  font-size: 24px;
+  color: #111;
+  margin: 50px 0 20px 0;
+}
+
+article .titleAbout {
+  font-size: 20px;
+  color: #111;
+  margin: 30px 0 20px 0;
+}
+/*# sourceMappingURL=main.css.map */

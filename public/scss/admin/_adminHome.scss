@@ -1,0 +1,30 @@
+header {
+	background: $color-title;
+	margin: 0 0 36px 0;
+	nav ul {
+		display: flex;
+		align-items: center;
+		width: 940px;
+		margin: 0 auto;
+		height: 80px;
+
+		li {
+			margin-right: 30px;
+
+			&:nth-child(1) {
+				margin-right: 50.4px;
+			}
+			a {
+				color: $color-text-gray-weak;
+				font-size: 16px;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+.header-title {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 35px;
+}

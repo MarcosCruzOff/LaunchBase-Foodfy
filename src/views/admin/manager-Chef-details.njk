@@ -1,0 +1,49 @@
+{% extends 'layout-manager.njk' %}
+
+{% block content %}
+    <!--CONTEUDO PRINCIPAL-->
+
+    <!--BANNER PRINCIPAL-->
+        <section class="header-title"> <h2>Chef:
+            {{ chef.name_chef }}</h2>
+        <a class="button primary" href="/admin/chef/{{ chef.id }}/edit">Editar Chef</a>
+    </section>
+    <section class="perfil-chef">
+        <img src="{{ chef.avatar_url }}" alt="foto:{chef.name_chef}"/>
+        <h3>{{ chef.name_chef }}</h3>
+        <p>
+            {% if chef.total_recipes > 0  %}
+                {{ total_recipes }}
+                Receita
+            {% elif total_recipes > 1 %}
+                {{ total_recipes }}
+                Receitas
+            {% else %}
+                Nenhuma receita pulicada ainda
+            {% endif %}
+        </p>
+    </section>
+
+    <!--RECEITAS MAIS ACESSADAS-->
+    <section class="perfil-receitas">
+        <h2>Receitas</h2>
+        <div class="cardAdmin">
+
+            {% if recipe > 0 %}
+                {% for recipe in recipes %}
+                    <div class="card" id="{{ recipe.id }}">
+                        <img src="/assets/lasanha.png" alt="lasanha mac n' cheese"/>
+                        <div class="card-description">
+                            <h3>lasanha mac n' cheese</h3>
+                            <p>Júlia Knito</p>
+                            <a href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="shy">Que pena! Nada publicado ainda =(</p>
+            {% endif %}
+
+        </div>
+    </section>
+{% endblock %}

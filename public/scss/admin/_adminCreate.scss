@@ -1,0 +1,40 @@
+form {
+	display: flex;
+	flex-direction: column;
+  
+	label {
+	  font-weight: bold;
+	  font-size: 16px;
+	  margin-bottom: 10px;
+	}
+  
+	input {
+		background: $color-white;
+		border: 1px solid $color-border;
+		border-radius: 4px;
+		height: 49px;
+		width: 100%;
+		margin-bottom: 30px;
+		font-size: 16px;
+		font-weight: 400;
+		color: $color-title;
+		padding: 18px 43px 18px 20px;		
+
+		&:nth-child(1){
+			margin-bottom: 10px;
+		}
+	}	
+
+	textarea {
+	  border: 1px solid $color-border;
+	  resize: none;
+	  height: 257px;	
+	  font-size: 16px;
+	  font-weight: 400;
+	  color: $color-title;
+	  line-height: 24px;  
+	  padding: 18px 43px 18px 20px;
+	  margin-bottom: 50px;
+	}
+  }
+  

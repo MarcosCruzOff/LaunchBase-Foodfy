@@ -1,0 +1,27 @@
+.perfil-chef {
+	border-radius: 30px;
+	text-align: center;
+	margin: 5px 0 50px 0;
+	border: 1px solid black;
+
+	img {
+		border-radius: 50%;
+		height: 200px;
+		width: 200px;
+		object-fit: cover;
+		object-position: center;
+		overflow: auto;
+		margin: 15px 0 30px 0;
+	}
+
+	h3 {
+		font-size: 36px;
+		color: $color-title;
+		margin-bottom: 4px;
+	}
+
+	p {
+		font-size: 20px;
+		color: $color-subtitle;
+	}
+}

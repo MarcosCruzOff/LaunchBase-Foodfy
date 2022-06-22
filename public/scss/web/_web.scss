@@ -1,0 +1,94 @@
+header {
+    margin: 38px auto 36px;
+    width: 940px;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            align-items: center;
+        }
+
+        li {
+            margin-right: 30px;
+            height: 37px;
+
+            &:nth-child(1) {
+                margin-right: 122px;
+            }
+
+            a {
+                color: $color-title;
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+
+
+    }
+}
+
+/* Estilizando Banner */
+.banner {
+    background-color: $color-banner;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    height: 366px;
+    margin: 0 0 50px 0;
+
+    ul {
+        margin: 117px 0 60px 60px;
+        text-align: justify;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 28px;
+        color: $color-title;
+        opacity: 0.7;
+        width: 316px;
+    }
+
+    img {
+        width: 216px;
+        height: 300px;
+        align-self: flex-end;
+        margin-right: 100px;
+    }
+}
+
+.accessed h2 {
+    margin-bottom: 20px;
+}
+
+/* Estilizando a Página Sobre */
+article {
+    font-size: 18px;
+    color: $color-text;
+    line-height: 28px;
+    text-align: justify;
+    
+    &:last-child {
+        margin-bottom: 50px;
+    }
+  
+    h2 {
+      font-size: 24px;
+      color: $color-title;
+      margin: 50px 0 20px 0;
+    }
+  
+    .titleAbout {
+      font-size: 20px;
+      color: $color-title;
+      margin: 30px 0 20px 0;
+    }
+}
+  

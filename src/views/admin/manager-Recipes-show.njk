@@ -1,0 +1,60 @@
+{% extends 'layout-manager.njk' %}
+{% block content %}
+
+    <!--PRINCIPAL-->
+    <section class="header-title">
+        <h1>Receita: {{ recipe.title_recipe }}</h1>
+        <a href="/admin/recipes/{{ recipe.id }}/edit" class="button primary">
+            Editar receita
+        </a>
+    </section>
+
+    <!--ReceitaHeader-->
+    <section class='recipe-header'>
+        <img src="{{ recipe.image }}" alt="{{ recipe.title_recipe }}">
+            <h1>{{ recipe.title_recipe }}</h1>
+            <h4>{{ recipe.author }}</h4>
+
+
+        </section>
+
+        <!--ReceitaIngrediente-->
+        <section class='recipe-ingredient'>
+            <h3>Ingredientes</h3>
+            <button class="btn" type="button">Esconder</button>
+
+            <div class="display">
+                <ul>
+                    <!-- Através da variavél 'ingrediente' é possivel acessar todos os elementos do Array ingredients, e trazer separado
+                    por ',' para cada tag <li> -->
+                    {% for ingredientes in recipe.ingredients %}
+                        <li>{{ ingredientes }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <!--ReceitaPreparo-->
+        <section class='recipe-preparetion'>
+            <h3>Modo de preparo</h3>
+            <button class="btn1" type="button">Esconder</button>
+
+            <div class="display1">
+                {% for propi in recipe.preparos %}
+                    <p>{{ propi }}</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!--ReceitaInformações-->
+        <section class='recipe-information'>
+            <h3>Informações adcionais</h3>
+            <button class="btn2" type="button">Esconder</button>
+
+            <div class="display2">
+                <p>{{ recipe.comentario }}</p>
+            </div>
+        </section>
+
+        <script src="/js/display.js"></script>
+    {% endblock content %}
