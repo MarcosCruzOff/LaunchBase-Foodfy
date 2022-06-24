@@ -88,7 +88,8 @@ main {
     display: inline-block;
 }
 
-.recipe-ingredients li {
+.recipe-ingredients li,
+.recipe-prepare li {
     color: $color-subtitle;
     font-size: 18px;
     line-height: 28px;
@@ -96,12 +97,12 @@ main {
     list-style: disc;
 }
 
-.recipe-prepare p,
 .recipe-information p {
     color: $color-subtitle;
     font-size: 18px;
     text-align: left;
     line-height: 28px;
+    list-style: disc;
 }
 
 .recipe-information {

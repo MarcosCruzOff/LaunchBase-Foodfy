@@ -1,22 +1,23 @@
 {% extends 'layout-manager.njk' %}
 
 {% block content %}
- <section>
-    <div class="header-title">
-        <h2>Gerenciar chefs</h2>
-        <a class="button primary" href="/admin/chef/create"> Novo Chef</a>
-    </div>
+    <section>
+        <div class="header-title">
+            <h2>Gerenciar chefs</h2>
+            <a class="button primary" href="/admin/chef/create">
+                Novo Chef</a>
+        </div>
 
-    <section class="chefs">
-        {% for chef in chefs %}
-            <div class="chef">
-                <img src="{{chef.avatar_url}}" alt="foto:{{chef.name_url}}">
-                <div class="card-description">
-                    <h3>{{chef.name_chef}}</h3>
-                    <a href="/admin/chef/{{chef.id}}">Visualizar</a>
-                </div>
-            </div>     
-        {% endfor %}
-    </section> 
-</section> 
-{% endblock content %}
+        <section class="chefs">
+            {% for chef in chefs %}
+                <div class="chef">
+                    <img src="{{ chef.avatar_url }}" alt="foto:{{ chef.name_url }}">
+                        <div class="card-description">
+                            <h3>{{ chef.name_chef }}</h3>
+                            <a href="/admin/chef/{{ chef.id }}">Visualizar</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+        </section>
+    {% endblock content %}

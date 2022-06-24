@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<form method="POST" action="/admin/recipes" >
-    <div class="header-title">
-        <h2>Criando receita</h2>
-        <button class="primary" type="submit">Salvar receita</button>
-    </div>
+    <form method="POST" action="/admin/recipes">
+        <div class="header-title">
+            <h2>Criando receita</h2>
+            <button class="primary" type="submit">Salvar receita</button>
+        </div>
 
-    {% include './fields-recipe.njk' %}
+        {% include './fields-recipe.njk' %}
 
-</form>
+    </form>
 
-<script src="/../js/ingredients.js"></script>
+    <script src="/../js/ingredients.js"></script>
 
 {% endblock content %}

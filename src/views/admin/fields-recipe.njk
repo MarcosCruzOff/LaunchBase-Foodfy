@@ -19,49 +19,40 @@
 
                 {% if not recipe.ingredients %}
                     <div class="ingredient">
-                        <input type="text" name="ingredients[]" value="" placeholder="Novo ingrediente"></div>
-                    {% endif %}
-                    {% for ingredient in recipe.ingredients %}
-                        <div class="ingredient">
-                            <input type="text" name="ingredients[]" value="{{ ingredient }}"></div>
-                        {% endfor %}
-
+                        <input type="text" name="ingredients[]" value="" placeholder="Novo ingrediente"/>
                     </div>
-                    <button type="button" class="add-ingredient btn-recipe-add">
-                        Adicionar novo ingrediente
-                    </button>
+                {% endif %}
+                {% for ingredient in recipe.ingredients %}
+                    <div class="ingredient">
+                        <input type="text" name="ingredients[]" value="{{ ingredient }}"/>
+                    </div>
+                {% endfor %}
 
-                    <!-- CAMPO PREPAROS -->
-                    <label for="">Modo de Preparo</label>
-                    <div id="preparetions" class="item">
+            </div>
+            <button type="button" class="add-ingredient btn-recipe-add">
+                Adicionar novo ingrediente
+            </button>
 
-                        {% if not recipe.preparetion %}
-                            <div class="preparetion">
-                                <input type="text" name="preparetions[]" value="" placeholder="Novo passo"></div>
-                            {% endif %}
-                            {% for preparo in recipe.preparetion %}
-                                <div class="preparetion">
-                                    <input type="text" name="preparetions[]" value="{{ preparetion }}"></div>
-                                {% endfor %}
+            <!-- CAMPO PREPAROS -->
+            <label for="">Modo de Preparo</label>
+            <div id="preparetions" class="item">
 
-                            </div>
-                            <button type="button" class="add-preparetion btn-recipe-add">
-                                Adicionar novo passo
-                            </button>
+                {% if not recipe.preparetion %}
+                    <div class="preparetion">
+                        <input type="text" name="preparetions[]" value="" placeholder="Novo passo"/>
+                    </div>
+                {% endif %}
+                {% for prepare in recipe.preparetions %}
+                    <div class="preparetion">
+                        <input type="text" name="preparetions[]" value="{{ prepare }}"/>
+                    </div>
+                {% endfor %}
 
-                            <!-- CAMPO INFORMAÇÃO -->
-                            <label for="">informações adicionais</label>
-                            <textarea name="information" id="" cols="30" rows="10" value="{{ recipe.comentario }}"></textarea>
+            </div>
+            <button type="button" class="add-preparetion btn-recipe-add">
+                Adicionar novo passo
+            </button>
 
-
-
-                            {# <div id="photos-upload-chef">
-                                                                                                                                                                                                                                                                <input 
-                                                                                                                                                                                                                                                                    type="file" 
-                                                                                                                                                                                                                                                                    name="photo_chef"
-                                                                                                                                                                                                                                                                    value="{{ chef.avatar_url }}"
-                                                                                                                                                                                                                                                                    id="photos-input" 
-                                                                                                                                                                                                                                                                    multiple accpet="image/*"
-                                                                                                                                                                                                                                                                    onchange="PhotosUpload.handleFileInput(event)"
-                                                                                                                                                                                                                                                                >        
-                                                                                                                                                                                                                                                            </div>     #}
+            <!-- CAMPO INFORMAÇÃO -->
+            <label for="">informações adicionais</label>
+            <textarea name="information" id="{{ recipe.id }}" cols="30" rows="10" value="{{ recipe.information }}"></textarea>

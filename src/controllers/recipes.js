@@ -95,7 +95,7 @@ exports.edit = function (req, res) {
         //birth: date(encontrarReceita.birth).iso
     }
 
-    return res.render('manager-Recipes-show', { recipe })
+    return res.render('manager-Recipes-edit', { recipe })
 }
 
 //Exporta a função que atualizar dados dos usuários
@@ -116,12 +116,11 @@ exports.put = function (req, res) {
         }
     })
 
-    if (!encontrarReceita) return res.send('Instrutor não encontrado')
+    if (!encontrarReceita) return res.send('Receita não encontrada')
 
     const recipe = {
         ...encontrarReceita,
         ...req.body,
-        // birth: Date.parse(req.body.birth),
         id: Number(req.body.id),
     }
 
@@ -140,10 +139,8 @@ exports.put = function (req, res) {
 
 //Delete
 exports.delete = function (req, res) {
-    //
     const { id } = req.body
 
-    //
     const filtraReceitas = database.recipes.filter(function (recipe) {
         return recipe.id != id
     })

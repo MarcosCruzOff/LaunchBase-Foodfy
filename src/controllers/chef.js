@@ -125,10 +125,8 @@ exports.put = function (req, res) {
 
 //Delete
 exports.delete = function (req, res) {
-    //
     const { id } = req.body
 
-    //
     const filterChef = database.chefs.filter(function (chef) {
         return chef.id != id
     })
