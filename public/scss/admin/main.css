@@ -91,12 +91,12 @@ main {
   list-style: disc;
 }
 
+.recipe-prepare p,
 .recipe-information p {
   color: #777;
   font-size: 18px;
   text-align: left;
   line-height: 28px;
-  list-style: disc;
 }
 
 .recipe-information {

@@ -2,21 +2,30 @@
   "name": "foodfy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "npm-run-all -p nodemon",
-    "nodemon": "nodemon server.js",
+    "start": "npm-run-all -p nodemon browsersync",
+    "browsersync": "browser-sync start --proxy http://localhost:4000 --files 'public, src/app/views'",
+    "nodemon": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "recipes",
+    "chefs",
+    "LaunchBase",
+    "Marcos Cruz",
+    "rocktseat"
+  ],
+  "author": "Marcos Cruz",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
     "method-override": "^3.0.0",
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "pg": "^8.7.3"
   },
   "devDependencies": {
+    "browser-sync": "^2.27.10",
     "nodemon": "^2.0.16",
     "npm-run-all": "^4.1.5"
   }
