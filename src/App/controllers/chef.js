@@ -1,8 +1,8 @@
 const fs = require('fs')
-const database = require('../../database.json')
+const database = require('../../../database.json')
 
 exports.index = function (req, res) {
-    return res.render('manager-Recipes', { recipes: database.recipes })
+    return res.render('manager-Chef', { chefs: database.chefs })
 }
 
 //Exporta a função de salvar
@@ -13,42 +13,31 @@ exports.post = function (req, res) {
             return res.send('Por favor, Preencha todos os campos')
     }
     // Destruturando o req.body
-    let {
-        image,
-        title_recipe,
-        author,
-        ingredients,
-        preparetions,
-        information,
-    } = req.body
+    let { name_chef, avatar_url } = req.body
 
     //Inserindo um id (identificador único do instrutor) no arquivo database.json
-    const id = Number(database.recipes.length)
+    const id = Number(database.chefs.length)
 
-    //inicia com uma chave de nome recipes, sendo um Array vazio {"recipes": []}
+    //inicia com uma chave de nome chefs, sendo um Array vazio {"chefs": []}
     // e inseri novos dados no arquivo databasebase.json [{...}]
-    database.recipes.push({
+    database.chefs.push({
         id,
-        image,
-        title_recipe,
-        author,
-        ingredients,
-        preparetions,
-        information,
+        name_chef,
+        avatar_url,
     })
     fs.writeFile(
         'database.json',
         JSON.stringify(database, null, 2),
         function (err) {
             if (err) return res.send('Write file error!')
-            return res.redirect('/admin/recipes')
+            return res.redirect('/admin/chef')
         },
     )
 }
 
 //Exporta a função de criar cadastro
 exports.create = function (req, res) {
-    return res.render('manager-Recipes-create', {})
+    return res.render('manager-Chef-create')
 }
 
 //Exporta a função que exibi o usuários pelo id show
@@ -57,24 +46,24 @@ exports.show = function (req, res) {
     const { id } = req.params
 
     //Variável que busca dentro do arquivo database.JSON o Arry de objeto "recipes"
-    const encontrarReceita = database.recipes.find(function (recipes) {
-        return recipes.id == id
+    const findChef = database.chefs.find(function (chef) {
+        return chef.id == id
     })
 
-    if (!encontrarReceita) return res.send('receita não encontrada')
+    if (!findChef) return res.send('receita não encontrada')
 
-    const recipe = {
-        ...encontrarReceita,
-        // age: age(encontrarReceita.birth),
-        // services: encontrarReceita.services.split(','),
+    const chef = {
+        ...findChef,
+        // age: age(findChef.birth),
+        // services: findChef.services.split(','),
         // created_at: new Intl.DateTimeFormat('pt-BR').format(
-        //   encontrarReceita.created_at
+        //   findChef.created_at
         // )
     }
 
-    //Renderiza a pagina show e envia os dados que a variável encontrarReceita
+    //Renderiza a pagina show e envia os dados que a variável findChef
     //buscou do databasebase.JSON para o front-end
-    return res.render('manager-Recipes-show', { recipe })
+    return res.render('manager-Chef-details', { chef })
 }
 
 //Exporta a função que edita os dados do usuários
@@ -83,19 +72,19 @@ exports.edit = function (req, res) {
     const { id } = req.params
 
     //Variável que busca dentro do arquivo database.JSON o Arry de objeto "instrutores"
-    const encontrarReceita = database.recipes.find(function (recipes) {
-        return recipes.id == id
+    const findChef = database.chefs.find(function (chef) {
+        return chef.id == id
     })
 
-    if (!encontrarReceita) return res.send('Receita não encontrado')
+    if (!findChef) return res.send('Receita não encontrado')
 
     //Retorna day--month--year
-    const recipe = {
-        ...encontrarReceita,
-        //birth: date(encontrarReceita.birth).iso
+    const chef = {
+        ...findChef,
+        //birth: date(findChef.birth).iso
     }
 
-    return res.render('manager-Recipes-edit', { recipe })
+    return res.render('manager-Chef-edit', { chef })
 }
 
 //Exporta a função que atualizar dados dos usuários
@@ -106,25 +95,22 @@ exports.put = function (req, res) {
     let index = 0
 
     //Variável que busca dentro do arquivo database.JSON o Arry de objeto "instrutores"
-    const encontrarReceita = database.recipes.find(function (
-        recipe,
-        encontarIndex,
-    ) {
-        if (recipe.id == id) {
-            index = encontarIndex
+    const findChef = database.chefs.find(function (chef, findIndex) {
+        if (chef.id == id) {
+            index = findIndex
             return true
         }
     })
 
-    if (!encontrarReceita) return res.send('Receita não encontrada')
+    if (!findChef) return res.send('Chef não encontrado')
 
-    const recipe = {
-        ...encontrarReceita,
+    const chef = {
+        ...findChef,
         ...req.body,
         id: Number(req.body.id),
     }
 
-    database.recipes[index] = recipe
+    database.chefs[index] = chef
 
     fs.writeFile(
         'database.json',
@@ -132,7 +118,7 @@ exports.put = function (req, res) {
         function (err) {
             if (err) return res.send('Write error')
 
-            return res.redirect(`/admin/recipes/${id}`)
+            return res.redirect(`/admin/chef/${id}`)
         },
     )
 }
@@ -141,11 +127,11 @@ exports.put = function (req, res) {
 exports.delete = function (req, res) {
     const { id } = req.body
 
-    const filtraReceitas = database.recipes.filter(function (recipe) {
-        return recipe.id != id
+    const filterChef = database.chefs.filter(function (chef) {
+        return chef.id != id
     })
 
-    database.recipes = filtraReceitas
+    database.chefs = filterChef
 
     fs.writeFile(
         'database.json',
@@ -153,7 +139,7 @@ exports.delete = function (req, res) {
         function (err) {
             if (err) return res.send('write Error')
 
-            return res.redirect('/admin/recipes')
+            return res.redirect('/admin/chef')
         },
     )
 }

@@ -10,16 +10,16 @@ server.use(express.static('public'))
 server.use(express.urlencoded({ extended: true }))
 server.use(methodOverride('_method'))
 
+//Usando as rotas
+server.use(router)
+
 server.set('view engine', 'njk')
-nunjucks.configure(['src/views/web', 'src/views/admin'], {
+nunjucks.configure(['src/App/views/web', 'src/App/views/admin'], {
     express: server,
     autoescape: true,
     watch: true,
     noCache: true,
 })
-
-//Usando as rotas
-server.use(router)
 
 server.listen(4000, function () {
     console.log('server up!')
