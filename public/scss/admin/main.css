@@ -170,6 +170,28 @@ input::placeholder {
   background-color: #6558c3;
 }
 
+.pagination {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+  color: #111;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.pagination a:hover,
+.pagination span:hover {
+  -webkit-filter: brightness(0.3);
+          filter: brightness(0.3);
+  border-bottom: 1px solid #111;
+}
+
 /* Estilizando o Footer */
 footer {
   margin-top: auto;
@@ -380,7 +402,11 @@ form label {
   margin-bottom: 10px;
 }
 
-form input {
+form select {
+  padding: 5px !important;
+}
+
+form input, form select {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -393,7 +419,7 @@ form input {
   padding: 18px 43px 18px 20px;
 }
 
-form input:nth-child(1) {
+form input:nth-child(1), form select:nth-child(1) {
   margin-bottom: 10px;
 }
 

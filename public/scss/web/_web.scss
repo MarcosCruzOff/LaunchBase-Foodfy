@@ -4,29 +4,42 @@ header {
 
     nav {
         display: flex;
-        justify-content: space-between;
-
+        justify-content: space-between;        
+        
         ul {
             display: flex;
-            align-items: center;
+           
+            li {
+                margin-right: 30px;
+                height: 37px;
+                display: flex;
+                align-items: center;
+                
+               
+                &:nth-child(1) {
+                    margin-right: 122px;
+                }
+
+                a {
+                    color: $color-title;
+                    font-size: 16px;
+                    font-weight: 400;                    
+                }
+            }
         }
 
-        li {
-            margin-right: 30px;
-            height: 37px;
+        form {
+            display: flex;
+            gap: 8px;
 
-            &:nth-child(1) {
-                margin-right: 122px;
-            }
-
-            a {
-                color: $color-title;
-                font-size: 16px;
-                font-weight: 400;
+            input {
+                border: $color-border 1px solid;
+                border-radius: 2px;
+                padding: 6px 15px;
+                border-radius: 4px;
+                width: 246px;
             }
         }
-
-
     }
 }
 

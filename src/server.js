@@ -14,7 +14,7 @@ server.use(methodOverride('_method'))
 server.use(router)
 
 server.set('view engine', 'njk')
-nunjucks.configure(['src/App/views/web', 'src/App/views/admin'], {
+nunjucks.configure(['src/App/Views/web', 'src/App/Views/admin'], {
     express: server,
     autoescape: true,
     watch: true,

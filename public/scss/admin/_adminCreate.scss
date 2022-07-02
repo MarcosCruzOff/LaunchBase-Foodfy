@@ -7,8 +7,12 @@ form {
 	  font-size: 16px;
 	  margin-bottom: 10px;
 	}
-  
-	input {
+	select{
+		padding: 5px !important;
+		
+	}
+
+	input,select {
 		background: $color-white;
 		border: 1px solid $color-border;
 		border-radius: 4px;

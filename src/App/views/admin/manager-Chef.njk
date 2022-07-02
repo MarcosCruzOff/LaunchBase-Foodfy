@@ -8,7 +8,7 @@
                 Novo Chef</a>
         </div>
 
-        <section class="chefs">
+        <div class="chefs">
             {% for chef in chefs %}
                 <div class="chef">
                     <img src="{{ chef.avatar_url }}" alt="foto:{{ chef.name_url }}">
@@ -16,8 +16,18 @@
                             <h3>{{ chef.name_chef }}</h3>
                             <a href="/admin/chef/{{ chef.id }}">Visualizar</a>
                         </div>
-                    </div>
-                {% endfor %}
-            </section>
-        </section>
-    {% endblock content %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div 
+        class="pagination" 
+        data-page={{ pagination.page }} 
+        data-total={{ pagination.total }} 
+        data-filter={{filter}}>
+            
+    </div>
+
+    
+{% endblock content %}

@@ -1,8 +1,12 @@
 const express = require('express')
 const recipesWeb = require('./data')
+const chefsWeb = require('./App/Controllers/chefs/chef')
 
-const recipe = require('../src/App/controllers/recipes')
-const chef = require('../src/App/controllers/chef')
+const recipe = require('./App/controllers/recipes/recipes')
+//const chef = require('./App/Controllers/chefs/chef')
+
+const controllersChef = require('./App/Controllers/chefs/ControllersChefs')
+const controllersRecipe = require('./App/Controllers/recipes/ControllersRecipes')
 
 const router = express.Router()
 
@@ -25,6 +29,9 @@ router.get('/recipes', function (req, res) {
     return res.render('recipes-web', { items: recipesWeb })
 })
 
+
+router.get('/chefs', chefsWeb.index)
+
 router.get('/recipe-details', function (req, res) {
     const id = req.query.id
     const recipe = recipesWeb.find(function (recipe) {
@@ -41,40 +48,40 @@ router.get('/recipe-details', function (req, res) {
 
 // Especificando as rotas do Administrador
 // Mostrar formulário de nova receita
-router.get('/admin/chef', chef.index)
+router.get('/admin/chef', controllersChef.index)
 
 // Mostrar formulário de nova receita
-router.get('/admin/chef/create', chef.create)
+router.get('/admin/chef/create', controllersChef.create)
 
 // Exibir detalhes de uma receita
-router.get('/admin/chef/:id', chef.show)
+router.get('/admin/chef/:id', controllersChef.show)
 
 // Mostrar formulário de edição de receita
-router.get('/admin/chef/:id/edit', chef.edit)
+router.get('/admin/chef/:id/edit', controllersChef.edit)
 
 // Cadastrar nova receita
-router.post('/admin/chef', chef.post)
+router.post('/admin/chef', controllersChef.post)
 
 // Editar uma receita
-router.put('/admin/chef', chef.put)
+router.put('/admin/chef', controllersChef.put)
 
 // Deletar uma receita
-router.delete('/admin/chef', chef.delete)
+router.delete('/admin/chef', controllersChef.delete)
 
 // Mostrar a lista de receitas
-router.get('/admin/recipes', recipe.index)
+router.get('/admin/recipes', controllersRecipe.index)
 
 // Mostrar formulário de nova receita
-router.get('/admin/recipes/create', recipe.create)
+router.get('/admin/recipes/create', controllersRecipe.create)
 
 // Exibir detalhes de uma receita
-router.get('/admin/recipes/:id', recipe.show)
+router.get('/admin/recipes/:id', controllersRecipe.show)
 
 // Mostrar formulário de edição de receita
-router.get('/admin/recipes/:id/edit', recipe.edit)
+router.get('/admin/recipes/:id/edit', controllersRecipe.edit)
 
 // Cadastrar nova receita
-router.post('/admin/recipes', recipe.post)
+router.post('/admin/recipes', controllersRecipe.post)
 
 // Editar uma receita
 router.put('/admin/recipes', recipe.put)

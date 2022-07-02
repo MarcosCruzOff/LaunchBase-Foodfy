@@ -170,6 +170,28 @@ input::placeholder {
   background-color: #6558c3;
 }
 
+.pagination {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+  color: #111;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.pagination a:hover,
+.pagination span:hover {
+  -webkit-filter: brightness(0.3);
+          filter: brightness(0.3);
+  border-bottom: 1px solid #111;
+}
+
 /* Estilizando o Footer */
 footer {
   margin-top: auto;
@@ -341,24 +363,42 @@ header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+header nav ul li {
+  margin-right: 30px;
+  height: 37px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-header nav li {
-  margin-right: 30px;
-  height: 37px;
-}
-
-header nav li:nth-child(1) {
+header nav ul li:nth-child(1) {
   margin-right: 122px;
 }
 
-header nav li a {
+header nav ul li a {
   color: #111;
   font-size: 16px;
   font-weight: 400;
+}
+
+header nav form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+header nav form input {
+  border: #ddd 1px solid;
+  border-radius: 2px;
+  padding: 6px 15px;
+  border-radius: 4px;
+  width: 246px;
 }
 
 /* Estilizando Banner */

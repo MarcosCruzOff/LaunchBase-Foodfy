@@ -1,4 +1,16 @@
 {% extends 'layout-web.njk' %}
+{% block header %}
+    <form action="/recipes" method="GET" id="search">
+        <input 
+            type="text" 
+            name="filter" 
+            value="{{ filter }}" 
+            placeholder="Buscar receita">
+        <button type="submit"   class="primary">
+           Buscar
+        </button>
+    </form>
+{% endblock header %}
 {% block content %}
     <section>
         <div class="cards">

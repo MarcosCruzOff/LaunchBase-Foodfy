@@ -8,7 +8,20 @@
 
 <!-- CAMPO NOME DO CHEF -->
 <label for="">Chef</label>
-<input type="text" name="author" value="{{ recipe.author }}">
+<select name="chef_id">
+    <option></option>
+    {% for chef in chefsOptions %}    
+        <option value="{{chef.id}}" 
+        {% if students.chef_id == chef.id %}
+            selected
+        {% endif %}>
+            {{chef.name_chef}}
+        </option>
+    {% endfor %}      
+
+</select> 
+
+
 
 <!-- CAMPO INGREDIENTES -->
 <label>Ingredientes</label>
@@ -17,12 +30,12 @@
         <div class="ingredient">
             <input type="text" name="ingredients[]" value="" placeholder="Novo ingrediente">
         </div>
-        {% endif %}
-        {% for ingredient in recipe.ingredients %}
-            <div class="ingredient">
-                <input type="text" name="ingredients[]" value="{{ ingredient }}">
-            </div>
-        {% endfor %}
+    {% endif %}
+    {% for ingredient in recipe.ingredients %}
+        <div class="ingredient">
+            <input type="text" name="ingredients[]" value="{{ ingredient }}">
+        </div>
+    {% endfor %}
 </div>
 <button type="button" class="add-ingredient btn-recipe-add">
     Adicionar novo ingrediente
